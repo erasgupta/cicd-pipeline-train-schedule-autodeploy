@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Deploy') {
           steps {
-            sh ("kubectl apply -f train-schedule-kube-canary.yml")
+            sh ("sudo kubectl apply -f train-schedule-kube.yml")
            }
         }
     }
