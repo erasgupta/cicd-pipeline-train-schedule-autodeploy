@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Deploy') {
           steps {
-            sh ("docker run -d -p 89:8080 -v /var/log/:/var/log/ erashish01/train-schedule:${env.BUILD_NUMBER}")
+            sh ("kubectl apply -f train-schedule-kube-canary.yml")
            }
         }
     }
